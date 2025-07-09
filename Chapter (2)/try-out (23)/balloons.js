@@ -1,2 +1,3 @@
-15 + 9 * 2;
-33
+var balloons = 100*2;
+balloons 
+200
