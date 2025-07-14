@@ -8,4 +8,4 @@ console.log(30 * 27);
 console.log(120 / 20);
 
 // Concatenates the strings "Your name", a space, and "is learning JavaScript!", then prints the result
-console.log("Your name" + " " + "is learning JavaScript!");
+console.log("James" + " " + "is learning JavaScript!");
