@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hangman Game</title>
+
+  <!-- CSS styles to make the page look nice -->
+  <style>
+    body {
+      font-family: Arial, sans-serif; /* Use a clean font */
+      text-align: center;             /* Center everything */
+      padding-top: 50px;              /* Space from the top */
+      background-color: #f0f8ff;      /* Light blue background */
+    }
+
+    h1 {
+      color: #333;                    /* Dark gray text for title */
+    }
+
+    #word {
+      font-size: 32px;                /* Big text for the word display */
+      letter-spacing: 10px;           /* Add space between letters */
+    }
+
+    #message {
+      font-size: 24px;                /* Bigger text for win/loss message */
+      color: green;                   /* Green color for winning message */
+      margin-top: 20px;               /* Space above message */
+    }
+
+    input, button {
+      font-size: 18px;                /* Make input and button easy to read */
+      padding: 10px;
+      margin-top: 15px;
+    }
+
+    #guessesLeft {
+      font-weight: bold;              /* Make guesses left stand out */
+    }
+  </style>
+</head>
+<body>
+  <!-- Title of the game -->
+  <h1>Hangman Game</h1>
+
+  <!-- This is where the secret word will be shown (like "_ _ _ _") -->
+  <p id="word"></p>
+
+  <!-- This is where the win/lose message will appear -->
+  <p id="message"></p>
+
+  <!-- This tells the player how many guesses are left -->
+  <p>Guesses left: <span id="guessesLeft"></span></p>
+
+  <!-- Input box where player types one letter -->
+  <input type="text" id="guessInput" maxlength="1" placeholder="Enter a letter">
+
+  <!-- Button that checks the guessed letter -->
+  <button onclick="makeGuess()">Guess</button>
+
+  <!-- JavaScript code starts here -->
+  <script>
+    // List of possible words the computer can pick from
+    const words = ["javascript", "hangman", "programming", "developer", "browser", "frontend", "function"];
+
+    // Pick one word randomly from the list
+    const word = words[Math.floor(Math.random() * words.length)];
+
+    // Create an array with "_" for each letter in the word (e.g., "_ _ _ _ _")
+    const answerArray = Array(word.length).fill("_");
+
+    // This keeps track of how many letters still need to be guessed
+    let remainingLetters = word.length;
+
+    // Set how many wrong guesses are allowed
+    const maxGuesses = 10;
+    let guessesLeft = maxGuesses;
+
+    // Show the blanks and guesses left when the game starts
+    document.getElementById("word").textContent = answerArray.join(" ");
+    document.getElementById("guessesLeft").textContent = guessesLeft;
+
+    // This function runs every time the "Guess" button is clicked
+    function makeGuess() {
+      // Get the letter the player typed and make it lowercase
+      const input = document.getElementById("guessInput");
+      let guess = input.value.toLowerCase();
+
+      // Clear the input box
+      input.value = "";
+
+      // Check if the player typed a single letter (a-z)
+      if (!guess || guess.length !== 1 || !guess.match(/[a-z]/i)) {
+        alert("Please enter a single letter.");
+        return; // Stop here if it's not valid
+      }
+
+      // Assume the guess is wrong at first
+      let correctGuess = false;
+
+      // Loop through each letter in the word
+      for (let i = 0; i < word.length; i++) {
+        // If the guessed letter matches and hasn't been guessed before
+        if (word[i] === guess && answerArray[i] === "_") {
+          answerArray[i] = guess;    // Show the letter
+          remainingLetters--;        // One less letter to guess
+          correctGuess = true;       // Mark this as a correct guess
+        }
+      }
+
+      // If the guess was wrong, remove one guess
+      if (!correctGuess) {
+        guessesLeft--;
+      }
+
+      // Update the screen with the word and remaining guesses
+      document.getElementById("word").textContent = answerArray.join(" ");
+      document.getElementById("guessesLeft").textContent = guessesLeft;
+
+      // If the player guessed all letters, show a win message
+      if (remainingLetters === 0) {
+        document.getElementById("message").textContent = "🎉 Congratulations! You guessed the word!";
+        disableInput(); // Stop the game
+      }
+      // If no guesses left, show game over message
+      else if (guessesLeft === 0) {
+        document.getElementById("message").textContent = `💀 Game Over! The word was "${word}".`;
+        disableInput(); // Stop the game
+      }
+    }
+
+    // This function disables the input and button after game ends
+    function disableInput() {
+      document.getElementById("guessInput").disabled = true;
+      document.querySelector("button").disabled = true;
+    }
+  </script>
+</body>
+</html>
