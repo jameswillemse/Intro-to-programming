@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>The Lunch Game</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    <!-- Link to external CSS file for styling -->
+    <link rel='stylesheet' type='text/css' media='screen' href='styles.css'>
+</head>
+
+<body>
+    <!-- This is where the 5-day weather will be shown (possibly added by JavaScript) -->
+    <div id="5DayWeather"></div>
+
+    <!-- Clear all floats, useful if weather uses floating elements -->
+    <br clear="all">
+
+    <!-- Order form for the lemonade stand game -->
+    <div id="orderForm">
+
+        <!-- Input section for entering number of glasses -->
+        <div id="glasses">
+            <label>
+                How many glasses of lemonade do you want to make this week?
+                <br />
+                <!-- User types how many glasses to sell -->
+                <input type="number" id="numGlasses" placeholder="hint: think big!" />
+            </label>
+        </div>
+
+        <!-- Input section for entering price per glass -->
+        <div id="price">
+            <label>
+                How much will you charge for a glass of lemonade this week?
+                <br />
+                <!-- User types price per glass -->
+                <input type="number" id="glassPrice" placeholder="more than .5" />
+            </label>
+        </div>
+
+        <!-- Button that starts the lemonade stand simulation -->
+        <button type="button" id="OpenTheStand">Open The Stand!</button>
+    </div>
+
+    <!-- This is where the result or outcome of the game will appear -->
+    <div id="result"></div>
+
+    <!-- Link to external JavaScript file containing game logic -->
+    <script src='main.js'></script>
+</body>
+
+</html>

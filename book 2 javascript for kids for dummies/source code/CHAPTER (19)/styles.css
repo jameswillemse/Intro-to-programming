@@ -1,0 +1,44 @@
+/* Style for each day of the week forecast box */
+#Monday, #Tuesday, #Wednesday, #Thursday, #Friday {
+    width: 18%;             /* Each box takes up about 1/5 of the row */
+    height: 200px;          /* Set a fixed height for all weather boxes */
+    float: left;            /* Arrange the boxes side by side */
+    border: 1px solid black;/* Add a black border around each box */
+    padding: 2px;           /* Add a little space inside each box */
+    font-family: sans-serif;/* Use a clean, modern font */
+    font-size: 12px;        /* Make the text small but readable */
+}
+
+/* Set background color for sunny days */
+.Sunny {
+    background-color: skyblue; /* Light blue for sunny skies */
+}
+
+/* Set background color for rainy days */
+.Raining {
+    background-color: lightgrey; /* Gray for rainy weather */
+}
+
+/* Set background color for cloudy days */
+.Cloudy {
+    background-color: #eee; /* Very light gray for cloudy skies */
+}
+
+/* Set background color and text color for thunderstorms */
+.Thunderstorm {
+    background-color: #333; /* Dark background for storms */
+    color: #fff;            /* White text so it's still readable */
+}
+
+/* Style for the lemonade order form */
+#orderForm {
+    width: 75%;             /* Make the form take up 75% of the screen width */
+    margin: 20px auto;      /* Center the form and add space above and below */
+}
+
+/* Style for the receipt or summary results */
+#receipt {
+    background-color: #996600; /* Dark golden color (like lemonade!) */
+    color: yellow;             /* Yellow text for contrast */
+    padding: 6px;              /* Add some space inside the box */
+}
