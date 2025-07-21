@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Set character encoding -->
+    <meta charset='utf-8'>
+
+    <!-- Compatibility mode for IE -->
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+
+    <!-- Title shown in the browser tab -->
+    <title>The Lunch Game</title>
+
+    <!-- Make sure the page scales well on all devices -->
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    <!-- Link to the external CSS file for styles -->
+    <link rel='stylesheet' type='text/css' media='screen' href='styles.css'>
+</head>
+
+<body>
+    <!-- Main heading of the game -->
+    <h1>Lunch Game!</h1>
+
+    <!-- Section for game instructions -->
+    <div id="instructions">
+        <p>
+            You get a weekly allowance of $<span id="money"></span> to buy lunch.
+            Sandwiches are always between $1 and $0, but you never know the price until you get to school.
+        </p>
+        <p>Your goal is to be able to buy lunch every day of the week.</p>
+    </div>
+
+    <!-- Section for placing an order -->
+    <div id="orderForm">
+        <label>
+            How many sandwiches do you want per day?
+            <br />
+            <!-- User input: number of sandwiches -->
+            <input type="number" id="numSandwiches" />
+        </label>
+        <!-- Button to place the order -->
+        <button type="button" id="placeOrder">Place Order</button>
+    </div>
+
+    <!-- Section to display the result (receipt) -->
+    <div id="receipt"></div>
+
+    <!-- Link to external JavaScript file for game functionality -->
+    <script src='main.js'></script>
+</body>
+
+</html>

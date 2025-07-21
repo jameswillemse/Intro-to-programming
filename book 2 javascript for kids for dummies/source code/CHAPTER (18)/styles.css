@@ -1,0 +1,24 @@
+/* Set the font for the whole webpage */
+body {
+    font-family: sans-serif; /* Uses a clean, easy-to-read font with no fancy edges */
+}
+
+/* Style the instructions section */
+#instructions {
+    background-color: pink;  /* Gives the box a pink background */
+    padding: 6px;            /* Adds space inside the box so text isn’t touching the edge */
+    margin: 6px;             /* Adds space outside the box to separate it from other elements */
+}
+
+/* Style the form where users enter how many sandwiches they want */
+#orderForm {
+    width: 75%;              /* Makes the form 75% the width of the page */
+    margin: 20px auto;       /* Centers the form and adds space above and below */
+}
+
+/* Style the receipt area that shows the result */
+#receipt {
+    background-color: #996600; /* Brown background color (like a lunch bag) */
+    color: yellow;             /* Yellow text to stand out against the brown */
+    padding: 6px;              /* Adds space inside the box for better layout */
+}
