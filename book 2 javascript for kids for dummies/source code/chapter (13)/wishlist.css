@@ -1,0 +1,36 @@
+h1{
+    background-color: blueviolet;
+    color: rgba(16, 103, 34, 0.573);
+}body {
+    font-family: Arial, sans-serif;
+}
+#listPage.print {
+    background-color: #edead0;
+    padding: 20px;
+    font-family: cursive;
+}
+#listPage.print ul {
+    margin: 10px 0px;
+    padding: 0px;
+    border-left: 4px double rgb(239, 41, 41);
+}
+#listPage.print li {
+    list-style-type:none;
+    margin: 0px -20px;
+    padding-left: 26px;
+    border-bottom: 1px solid rgb(220, 68, 237);
+    line-height: 36px;
+    font-size: 24px;
+    font-family: cursive;
+}
+#addIt{
+background-color: blueviolet;
+}
+#printable{
+    background-color: rgb(24, 94, 41);
+    color: aquamarine;
+}
+#iWant{
+    background-color: rgb(157, 212, 106);
+    color: bisque;
+}

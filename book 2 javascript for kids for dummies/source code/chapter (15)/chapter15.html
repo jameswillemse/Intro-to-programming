@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>JS Activity of the Day</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    #todaysDate {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    #whattodoList {
+      margin-top: 15px;
+      font-weight: bold;
+      color: darkblue;
+    }
+
+    input[type="button"] {
+      padding: 10px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>JS Activity of the Day</h1>
+
+  <!-- Displays today's date -->
+  <div id="todaysDate"></div>
+
+  <!-- Button to suggest what to do -->
+  <div>
+    <input id="whattodo" type="button" value="What should I do today?">
+  </div>
+
+  <!-- Where the suggestion will appear -->
+  <div id="whattodoList"></div>
+
+  <script>
+    // Get references to elements
+    var todayDate = document.getElementById("todaysDate");
+    var btn = document.getElementById("whattodo");
+    var whattodoList = document.getElementById("whattodoList");
+
+    // Create a new Date object
+    var d = new Date();
+
+    // Display today's date
+    function displayDate() {
+      todayDate.innerHTML = "Today is: " + d.toDateString();
+    }
+
+    // Function to show activity based on the day of the week
+    function displayActivity() {
+      var dayOfWeek = d.getDay(); // 0 = Sunday, 1 = Monday, ..., 6 = Saturday
+      var activity = "";
+
+      if (dayOfWeek === 0) {
+        activity = "Relax! It's Sunday. Go for a walk or read a book.";
+      } else if (dayOfWeek === 1) {
+        activity = "It's Monday. Time to plan your week!";
+      } else if (dayOfWeek === 2) {
+        activity = "It's Tuesday. Work on your goals!";
+      } else if (dayOfWeek === 3) {
+        activity = "It's Wednesday. Halfway there! Review your progress.";
+      } else if (dayOfWeek === 4) {
+        activity = "It's Thursday. Great day to learn something new.";
+      } else if (dayOfWeek === 5) {
+        activity = "It's Friday. Finish strong and relax later!";
+      } else if (dayOfWeek === 6) {
+        activity = "It's Saturday. Enjoy your weekend!";
+      } else {
+        activity = "Hmm, I don't recognize this day.";
+      }
+
+      // Show activity
+      whattodoList.innerHTML = activity;
+    }
+
+    // Event listener on button
+    btn.addEventListener("click", displayActivity);
+
+    // Call function to display date on page load
+    displayDate();
+  </script>
+
+</body>
+</html>
