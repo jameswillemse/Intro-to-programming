@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Guess the Secret Number</title>
+  <style>
+    body {
+      background: #0a0a0a;
+      color: #00ff99;
+      font-family: 'Courier New', monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+
+    h1 {
+      font-size: 2rem;
+      text-shadow: 0 0 10px #00ff99;
+    }
+
+    button {
+      padding: 10px 20px;
+      background: #00ff99;
+      color: #000;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 5px;
+      margin-top: 20px;
+    }
+
+    button:hover {
+      background: #00cc77;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Guess the Secret Number (1-20)</h1>
+  <button onclick="startGame()">Start Game</button>
+
+  <script>
+    function startGame() {
+      // Make the secret number random between 1 and 20
+      var secret = Math.floor(Math.random() * 20) + 1;
+      
+      // Initial guess prompt combined into one line
+      let guess = parseInt(prompt("Please guess the secret number (1-20)"));
+
+      while (guess !== secret) {
+        if (guess < secret) {
+          alert("Incorrect, too low.");
+        } else if (guess > secret) {
+          alert("Incorrect, too high.");
+        } else {
+          alert("Sorry, invalid guess.");
+        }
+        guess = parseInt(prompt("Try again. Guess the number (1-20)"));
+      }
+
+      alert("🎉 Correct Guess! The secret number was " + secret + ".");
+    }
+  </script>
+
+</body>
+</html>
